@@ -4,12 +4,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 // Twilio Config
-const accountSid = "AC7b9446309286f744b8c2e5ab8535aa46";
-const authToken = "6f253642a1f131b33362019f57ae3b6a";
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
 const MessagingResponse = require("twilio").twiml.MessagingResponse;
 const client = require("twilio")(accountSid, authToken);
 
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 // MIDDLEWARES
