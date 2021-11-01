@@ -19,6 +19,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // ROUTES
+// Hello Word
+app.use("/", (req, res) => {
+  res.end("Hello World");
+});
+
 // Listens for new messages from twilio and determine message response
 app.use("/api/twilio-webhook", async (req, res) => {
   // console.log(res);
